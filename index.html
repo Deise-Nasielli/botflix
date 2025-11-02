@@ -1,15 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="BotFlix — Assistente inteligente que recomenda o filme perfeito com base no seu humor ou tema desejado.">
+    <meta name="description"
+        content="BotFlix — Assistente inteligente que recomenda o filme perfeito com base no seu humor ou tema desejado.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="shortcut icon" href="./src/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./src/img/favicon.ico" type="image/x-icon">
     <title>BotFlix: Descubra o filme ideal para cada momento.</title>
 </head>
+
 <body>
-    <main>
-        
+    <main class="container">
+        <div class="main-content">
+            <header class="brand-header">
+                <img src="./src/img/botflix-robot.jpg" alt="Imagem de um robô">
+                <h1>BotFlix</h1>
+            </header>
+            <section class="search-card">
+                <div class="search-content">
+                    <div class="input-container">
+                        <textarea id="mood-textarea" class="mood-textarea" rows="3" 
+                            placeholder="Vamos rir, chorar ou se arrepiar..."></textarea>
+                        <div class="examples">
+                            <p>Exemplos:</p>
+                            <ul>
+                                <li>Estou me sentindo aventureiro e quero algo emocionante.</li>
+                                <li>Quero assistir a uma comédia leve para relaxar.</li>
+                                <li>Procuro um filme de suspense que me mantenha na ponta da cadeira.</li>
+                            </ul>
+                        </div>
+                        <button id="search-button" class="search-button" >
+                            <span class="play-icon">&#9654;</span>
+                            Encontrar..
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <div id="results">
+                <h2>Esse é o match ideal para o seu humor de hoje.</h2>
+                <div id="movie" class="movie">
+
+                </div>
+            </div>
+        </div>
     </main>
 </body>
+
 </html>
