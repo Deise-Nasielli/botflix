@@ -8,14 +8,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./src/img/favicon.ico" type="image/x-icon">
     <title>BotFlix: Descubra o filme ideal para cada momento.</title>
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 </head>
 
 <body>
+    <div class="bg"></div>
+    <div class="Bg bg2"></div>
+    <div class="bg bg3"></div>
+
     <main class="container">
         <div class="main-content">
             <header class="brand-header">
-                <img src="./src/img/botflix-robot.jpg" alt="Imagem de um robô">
+                <div class="container-logo">
+                <div class="float-scale">
+                <img src="./src/img/botflix-robot.jpg" alt="Imagem de um robô" class="robot-image">
+                </div>
+                
                 <h1>BotFlix</h1>
+                </div>
+                <p class="brand-subtitle">Seu assistente pessoal para encontrar o filme perfeito</p>
             </header>
             <section class="search-card">
                 <div class="search-content">
@@ -23,8 +36,8 @@
                         <textarea id="mood-textarea" class="mood-textarea" rows="3" 
                             placeholder="Vamos rir, chorar ou se arrepiar..."></textarea>
                         <div class="examples">
-                            <p>Exemplos:</p>
-                            <ul>
+                            <h3 class="examples-title">Exemplos:</h3>
+                            <ul class="examples-list">
                                 <li>Estou me sentindo aventureiro e quero algo emocionante.</li>
                                 <li>Quero assistir a uma comédia leve para relaxar.</li>
                                 <li>Procuro um filme de suspense que me mantenha na ponta da cadeira.</li>
@@ -37,14 +50,14 @@
                     </div>
                 </div>
             </section>
-            <div id="results">
+            <div class="results" id="results">
                 <h2>Esse é o match ideal para o seu humor de hoje.</h2>
                 <div id="movie" class="movie">
-
                 </div>
             </div>
         </div>
     </main>
+    <script src="./src/js/index.js"></script>
 </body>
 
 </html>

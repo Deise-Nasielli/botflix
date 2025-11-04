@@ -1,0 +1,163 @@
+body{
+    background-color: #000000;
+    color: #ffffff;
+}
+.container{
+    max-width: 1200px;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+.container .main-content{
+    width: 100%;
+    max-height: 100vh;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.brand-header{
+    padding: 25px;
+}
+.brand-header .container-logo{
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.robot-image{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    animation: float 3s ease-out infinite;
+}
+.container-logo h1{
+    color: #f20612;
+    font-size: 48px;
+    font-weight: 700;
+}
+.brand-subtitle{
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: center;
+}
+.search-card{
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 600px;
+    padding: 32px;
+    margin: 0 auto;
+}
+.search-content{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.mood-textarea{
+    width: 100%;
+    padding: 16px 64px 16px 16px;
+    background-color: rgba(255,255,255, 0.05);
+    color: #ffffff;
+    font-size: 16px;
+    border: 1px solid rgba(255,255, 255, 0.3);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+.mood-textarea:focus{
+    outline: none;
+    border-color: #e50914;
+    box-shadow: 0 0 0 3px rgba(229,9,20,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.examples{
+    color: #d0d0d0;
+    font-size: 14px;
+    text-align: left;
+}
+.examples-title{
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+.examples-list{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12px;
+    margin-left: 12px;
+    opacity: 0.8;
+    padding-bottom: 20px;
+}
+.search-button{
+    background-color: #e50914;
+    width: 100%;
+    padding: 16px 32px;
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.search-button:hover{
+    background-color: #f40612;
+    box-shadow: 0 4px 12px rgba(229,9,20,0.4);
+}
+.results{
+    padding-top: 20px;
+    font-weight: 200;
+    
+}
+/*animação*/
+.bg{
+    left: -50%;
+    right: -50%;
+    top: 0;
+    bottom: 0;
+    background-image: linear-gradient(-60deg, #510101 50%, #181717 50%);
+    position: fixed;
+    z-index: -1;
+    opacity: 0.7;
+    animation: slide 4s ease-in-out infinite alternate;
+}
+.bg2{
+    animation-direction: alternate-reverse;
+    animation-duration: 5s;
+}
+.bg3{
+    animation-duration: 6s;
+}
+@keyframes slide{
+    0% {
+        transform: translateX(-20%);
+    }
+    100% {
+        transform: translateX((20%));
+    }
+}
+
+@keyframes float{
+    0%,100%{
+        transform: translateY(0px);
+    }
+    50% {
+        transform: scaleY(-20px);
+    }
+}
+
+/* A definição da animação */
+@keyframes floatScale {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+    }
+    50% {
+        transform: translateY(-20px) scale(1.1);
+    }
+}
+
+/* A classe que aplica a animação */
+.float-scale {
+    animation: floatScale 3s ease-in-out infinite;
+}
