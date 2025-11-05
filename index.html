@@ -10,7 +10,8 @@
     <title>BotFlix: Descubra o filme ideal para cada momento.</title>
     <link rel="stylesheet" href="./src/css/reset.css">
     <link rel="stylesheet" href="./src/css/style.css">
-     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
 </head>
 
 <body>
@@ -22,19 +23,23 @@
         <div class="main-content">
             <header class="brand-header">
                 <div class="container-logo">
-                <div class="float-scale">
-                <img src="./src/img/botflix-robot.jpg" alt="Imagem de um robô" class="robot-image">
-                </div>
-                
-                <h1>BotFlix</h1>
+                    <div class="float-scale">
+                        <img src="./src/img/botflix-robot.jpg" alt="Imagem de um robô" class="robot-image">
+                    </div>
+
+                    <h1>BotFlix</h1>
                 </div>
                 <p class="brand-subtitle">Seu assistente pessoal para encontrar o filme perfeito</p>
             </header>
+
+            <!-- Search Card -->
             <section class="search-card">
                 <div class="search-content">
                     <div class="input-container">
-                        <textarea id="mood-textarea" class="mood-textarea" rows="3" 
+                        <textarea id="mood-input" class="mood-input" rows="3"
                             placeholder="Vamos rir, chorar ou se arrepiar..."></textarea>
+
+                            <!-- Examples -->
                         <div class="examples">
                             <h3 class="examples-title">Exemplos:</h3>
                             <ul class="examples-list">
@@ -43,16 +48,22 @@
                                 <li>Procuro um filme de suspense que me mantenha na ponta da cadeira.</li>
                             </ul>
                         </div>
-                        <button id="search-button" class="search-button" >
+                        <button id="search-button" class="search-button">
                             <span class="play-icon">&#9654;</span>
                             Encontrar..
                         </button>
                     </div>
                 </div>
             </section>
-            <div class="results" id="results">
+           <!-- Resultados dos filmes -->
+            <div id="results" class="results">
                 <h2>Esse é o match ideal para o seu humor de hoje.</h2>
                 <div id="movie" class="movie">
+                    
+                        <div id="movies-grid" class="movies-grid">
+                            
+                        </div>
+                    
                 </div>
             </div>
         </div>

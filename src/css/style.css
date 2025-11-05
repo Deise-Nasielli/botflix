@@ -1,8 +1,10 @@
 body{
     background-color: #000000;
     color: #ffffff;
+    font-family: "inter", system-ui, sans-serif;
 }
 .container{
+    width: 100%;
     max-width: 1200px;
     min-height: 100vh;
     margin: 0 auto;
@@ -10,38 +12,42 @@ body{
 .container .main-content{
     width: 100%;
     max-height: 100vh;
-    padding: 35px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    animation: fadeIn 0.6s ease-out;
 }
 .brand-header{
-    padding: 25px;
+    padding: 24px 0;
 }
 .brand-header .container-logo{
     margin-bottom: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 16px;
 }
 .robot-image{
-    width: 100px;
-    height: 100px;
+    width: 128px;
+    height: 128px;
     border-radius: 50%;
     object-fit: cover;
+    box-shadow: 0 0 40px hsla(348, 83%,47%,0.4);
     animation: float 3s ease-out infinite;
 }
 .container-logo h1{
+    margin-bottom: 16px;
     color: #f20612;
     font-size: 48px;
     font-weight: 700;
 }
 .brand-subtitle{
+    color: #ffffff;
     font-size: 20px;
     line-height: 1.6;
-    text-align: center;
 }
 .search-card{
     background-color: rgba(255, 255, 255, 0.1);
@@ -56,21 +62,28 @@ body{
     flex-direction: column;
     gap: 24px;
 }
-.mood-textarea{
+.input-container{
+    position: relative;
+    
+}
+.mood-input{
     width: 100%;
     padding: 16px 64px 16px 16px;
     background-color: rgba(255,255,255, 0.05);
     color: #ffffff;
     font-size: 16px;
+    font-family: inherit;
     border: 1px solid rgba(255,255, 255, 0.3);
     border-radius: 8px;
     transition: all 0.2s ease;
 }
-.mood-textarea:focus{
+.mood-input:focus{
     outline: none;
     border-color: #e50914;
     box-shadow: 0 0 0 3px rgba(229,9,20,0.1);
-    background-color: rgba(255, 255, 255, 0.1);
+}
+.mood-input::placeholder{
+    color: #ebebeb;
 }
 .examples{
     color: #d0d0d0;
@@ -86,9 +99,9 @@ body{
     flex-direction: column;
     gap: 4px;
     font-size: 12px;
-    margin-left: 12px;
+    list-style: none;
     opacity: 0.8;
-    padding-bottom: 20px;
+    margin-bottom: 8px;
 }
 .search-button{
     background-color: #e50914;
@@ -96,20 +109,108 @@ body{
     padding: 16px 32px;
     color: #ffffff;
     font-weight: 600;
+    font-size: 16px;
+    font-family: inherit;
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     transition: all 0.2s ease;
 }
-.search-button:hover{
+.search-button:hover:not(:disabled){
     background-color: #f40612;
-    box-shadow: 0 4px 12px rgba(229,9,20,0.4);
+    transform: rotateY('-1px');
+    box-shadow: 0 10px 25px rgba(229,9,20,0.3);
 }
-.results{
-    padding-top: 20px;
-    font-weight: 200;
-    
+.search-button:disabled{
+    opacity: 0.5;
+    cursor: not-allowed;
 }
+.play-icon{
+    transition: transform 0.2s ease;
+}
+
+.search-button:hover:not(:disabled) .play-icon{
+    transform: scale(1.1);
+}
+
+/* Estilos para grid de filmes responsivo */
+#results{
+    width: 100%;
+    margin-top: 32px;
+    display: none;
+}
+#results h2{
+    padding: 50px 0;
+}
+.movies-grid{
+    gap: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.movie-card{
+    background: rgba(30,30,40,0.95);
+    width: 320px;
+    border: 1.5px solid #222;
+    border-radius: 19px;
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.18);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.movie-card:hover{
+    border-color: #e50914;
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.28);
+}
+.movie-poster{
+    width: 100%;
+}
+.movie-poster img{
+    width: 100%;
+}
+
+.no-poster {
+  width: 100%;
+  height: 420px;
+  background: #222;
+  color: #888;
+  font-size: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.movie-info {
+  padding: 24px;
+}
+
+.movie-title {
+  margin-bottom: 8px;
+  color: #fff;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.movie-overview {
+  height: 150px;
+  padding: 10px;
+  margin-bottom: 16px;
+  min-height: 60px;
+  color: #ccc;
+  font-size: 16px;
+  overflow: auto;
+}
+
+.movie-rating {
+  color: #e50914;
+  font-size: 18px;
+  font-weight: 600;
+} 
+
 /*animação*/
 .bg{
     left: -50%;
@@ -161,3 +262,4 @@ body{
 .float-scale {
     animation: floatScale 3s ease-in-out infinite;
 }
+
