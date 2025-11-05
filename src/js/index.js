@@ -77,11 +77,11 @@ async function handleSearch() {
             <div class="movie-poster">
                 <img src="${posterUrl}" alt="${movie.title}"/>
             </div>
-                <div class="movie-info"
-                <div class="movie-title">${movie.title}</div>
-                <div class="movie-overview">${movie.overview || "Sem descrição."}</div>
-                <div class="movie-rating">⭐ ${movie.vote_average.toFixed() || "N/A"} /10</div>
-            </div>
+                <div class="movie-info">
+                    <div class="movie-title">${movie.title}</div>
+                    <div class="movie-overview">${movie.overview || "Sem descrição."}</div>
+                    <div class="movie-rating">⭐ ${movie.vote_average.toFixed(1) || "N/A"} /10</div>
+                </div>
         </div>`;
         }else{
         alert('Não foi possível exibier o resultado. Elementos não encontrados.');
